@@ -24,8 +24,7 @@ class Password(Base):
     passwd=Column(String(50))
     extra=Column(String(100),doc='额外信息,例如网址')
 
-if not os.path.exists('data.db'):
-    Base.metadata.create_all(engine) #创建表
+Base.metadata.create_all(engine) #创建表
 
 
 @click.group()
